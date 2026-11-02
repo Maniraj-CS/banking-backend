@@ -1,3 +1,5 @@
+Local Testing Command releted docker  inside
+
 login to mongoose : docker exec -it local_mongodb mongosh -u admin -p password123 --authenticationDatabase admin
 show all db : show dbs
 show all connections : show collections

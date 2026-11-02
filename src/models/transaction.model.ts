@@ -38,13 +38,13 @@ const transactionSchema = new mongoose.Schema<ITransactionModel>(
   { timestamps: true }
 );
 
-// ✅ idempotency: same request repeat ho to duplicate transaction na bane
+// ✅ idempotency: same request not repeated duplicate transaction not created
 transactionSchema.index({ idempotencyKey: 1 }, { unique: true });
 
 // ✅ Useful query index (from -> status -> createdAt)
 transactionSchema.index({ fromAccount: 1, status: 1, createdAt: -1 });
 
-// ✅ Validation: fromAccount and toAccount same nahi hona chahiye
+// ✅ Validation: fromAccount and toAccount not be same
 transactionSchema.pre("validate", function () {
   if (
     this.fromAccount &&
