@@ -1,0 +1,7 @@
+login to mongoose : docker exec -it local_mongodb mongosh -u admin -p password123 --authenticationDatabase admin
+show all db : show dbs
+show all connections : show collections
+switch to other db: use <db_name>
+list all content in collection : db.<colleciton_name>.find()
+delete a single user from db: db.users.deleteOne({email:"<email_name>"})
+delete all users in single command : db.users.deleteMany({})
